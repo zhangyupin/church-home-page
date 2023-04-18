@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title></title>
+    <style>
+        body img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .active {
+            color: rgba(0, 138, 255, .9);
+        }
+
+        ._nav {
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function() {
+            setTimeout(function() {
+                document.querySelector('body').classList.add('loaded');
+            }, 300);
+        });
+    </script>
+    <link rel="stylesheet" href="assets/css/quick-website.css" id="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand">
+                <img alt="Image placeholder" src="assets/img/ticc-title.png" id="navbar-logo">
+            </a>
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mt-4 mt-lg-0 ml-auto">
+                    <li class="nav-item ">
+                        <a id="topPage" class="nav-link _nav"></a>
+                    </li>
+                    <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+                        <a id="ikebukuroParent" class="nav-link _nav"></a>
+                    </li>
+                    <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+                        <a id="saitamaParent" class="nav-link _nav"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="religion" class="nav-link _nav"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="clergyman" class="nav-link _nav"></a>
+                    </li>
+                    <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+                        <a id="languageParent" style="color: #e60000" class="nav-link _nav" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                        <div class="dropdown-menu dropdown-menu-single">
+                            <a id="chinese" class="dropdown-item nav-link _nav"></a>
+                            <a id="japanese" class="dropdown-item nav-link _nav"></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Main content -->
+    <section class="slice py-1">
+        <div class="container">
+            <div class="mt-5">
+                <div class="card">
+                    <div class="card-body pb-5">
+                        <h5 id="introductionTitle" class="h4 lh-130 mb-3"></h5>
+                        <p id="introductionContent1" class="text-muted mb-3"></p>
+                        <p id="introductionContent2" class="text-muted mb-3"></p>
+                        <p id="introductionContent3" class="text-muted mb-3"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5">
+                <div class="card">
+                    <div class="card-body pb-5">
+                        <h5 id="eventTitle" class="h4 lh-130 mb-3"></h5>
+                        <p id="eventJapaneseWorship" class="text-muted mb-3"></p>
+                        <p id="eventChineseWorship" class="text-muted mb-3"></p>
+                        <p id="eventCihld" class="text-muted mb-3"></p>
+                        <p id="eventPrayerMeeting" class="text-muted mb-3"></p>
+                        <p id="eventBarnParty" class="text-muted mb-3"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="position-relative" id="footer-main">
+        
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/unit.js"></script>
+    <script>
+        $(document).ready(function(){
+            fetch("./assets/data/top-bar.json")
+            .then((response) => response.json())
+            .then((d) => setTopBar(d))
+            .then((d) => {
+                fetch("./assets/data/about-ikebukuro.json")
+                .then((response) => response.json())
+                .then((d) => {
+                    if (isChinese()) setPageItem(d.zh);
+                    else setPageItem(d.jp);
+                    $("#ikebukuroParent").addClass("active").siblings().removeClass("active");
+                })
+            });
+
+            $("#chinese").click(function() {reload("zh");});
+            $("#japanese").click(function() {reload("jp");});
+            $(".nav-link").click(function() {
+                jump(this.id);
+            })
+        });
+
+        function setPageItem(d) {
+            $("head title").text(d.headTitle);
+
+            $("#introductionTitle").text(d.introduction.title);
+            $("#introductionContent1").text(d.introduction.content1);
+            $("#introductionContent2").text(d.introduction.content2);
+            $("#introductionContent3").text(d.introduction.content3);
+
+            $("#eventTitle").text(d.event.title);
+            $("#eventJapaneseWorship").text(d.event.japaneseWorship);
+            $("#eventChineseWorship").text(d.event.chineseWorship);
+            $("#eventCihld").text(d.event.cihld);
+            $("#eventPrayerMeeting").text(d.event.prayerMeeting);
+            $("#eventBarnParty").text(d.event.barnParty);
+        }
+    </script>
+</body>
+
+</html>

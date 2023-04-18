@@ -1,0 +1,34 @@
+{
+    "zh": {
+        "topPage": "首页",
+        "ikebukuro": {
+            "parent": "东京池袋基督教会"
+        },
+        "saitama": {
+            "parent": "埼玉使命基督教会"
+        },
+        "religion": "信仰告白",
+        "clergyman": "牧师简介",
+        "language": {
+            "parent": "语言",
+            "chinese": "中文",
+            "japanese": "日语"
+        }
+    },
+    "jp": {
+        "topPage": "トプページ",
+        "ikebukuro": {
+            "parent": "東京池袋基督教会"
+        },
+        "saitama": {
+            "parent": "埼玉使命基督教会"
+        },
+        "religion": "信仰告白",
+        "clergyman": "牧師紹介",
+        "language": {
+            "parent": "言語",
+            "chinese": "中国語",
+            "japanese": "日本語"
+        }
+    }
+}

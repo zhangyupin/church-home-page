@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title></title>
+    <style>
+        body img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .active {
+            color: rgba(0, 138, 255, .9);
+        }
+
+        ._nav {
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function() {
+            setTimeout(function() {
+                document.querySelector('body').classList.add('loaded');
+            }, 300);
+        });
+    </script>
+    <link rel="stylesheet" href="assets/css/quick-website.css" id="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand">
+                <img alt="Image placeholder" src="assets/img/ticc-title.png" id="navbar-logo">
+            </a>
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mt-4 mt-lg-0 ml-auto">
+                    <li class="nav-item ">
+                        <a id="topPage" class="nav-link _nav"></a>
+                    </li>
+                    <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+                        <a id="ikebukuroParent" class="nav-link _nav"></a>
+                    </li>
+                    <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+                        <a id="saitamaParent" class="nav-link _nav"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="religion" class="nav-link _nav"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="clergyman" class="nav-link _nav"></a>
+                    </li>
+                    <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+                        <a id="languageParent" style="color: #e60000" class="nav-link _nav" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                        <div class="dropdown-menu dropdown-menu-single">
+                            <a id="chinese" class="dropdown-item nav-link _nav"></a>
+                            <a id="japanese" class="dropdown-item nav-link _nav"></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Main content -->
+    <section class="slice py-1">
+        <div class="container">
+            <div class="mt-5">
+                <div class="card">
+                    <div class="card-body pb-5">
+                        <p id="content1" class="text-muted"></p>
+                        <p id="content2" class="text-muted"></p>
+                        <p id="content3" class="text-muted"></p>
+                        <p id="content4" class="text-muted"></p>
+                        <p id="content5" class="text-muted"></p>
+                        <p id="content6" class="text-muted"></p>
+                        <p id="content7" class="text-muted"></p>
+                        <p id="content8" class="text-muted"></p>
+                        <p id="content9" class="text-muted"></p>
+                        <p id="content10" class="text-muted"></p>
+                        <p id="content11" class="text-muted"></p>
+                        <p id="content12" class="text-muted"></p>
+                        <p id="content13" class="text-muted"></p>
+                        <p id="content14" class="text-muted"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="position-relative" id="footer-main">
+        
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/unit.js"></script>
+    <script>
+        $(document).ready(function(){
+            fetch("./assets/data/top-bar.json")
+            .then((response) => response.json())
+            .then((d) => setTopBar(d))
+            .then((d) => {
+                fetch("./assets/data/pastor-introduction.json")
+                .then((response) => response.json())
+                .then((d) => {
+                    if (isChinese()) setPageItem(d.zh);
+                    else setPageItem(d.jp);
+                    $("#clergyman").addClass("active").siblings().removeClass("active");
+                })
+            });
+
+            $("#chinese").click(function(){
+                reload("zh");
+            });
+
+            $("#japanese").click(function(){
+                reload("jp");
+            });
+
+            $(".nav-link").click(function() {
+                jump(this.id);
+            })
+        });
+
+        function setPageItem(d) {
+            $("head title").text(d.headTitle);
+
+            $("#content1").text(d.content1);
+            $("#content2").text(d.content2);
+            $("#content3").text(d.content3);
+            $("#content4").text(d.content4);
+            $("#content5").text(d.content5);
+            $("#content6").text(d.content6);
+            $("#content7").text(d.content7);
+            $("#content8").text(d.content8);
+            $("#content9").text(d.content9);
+            $("#content10").text(d.content10);
+            $("#content11").text(d.content11);
+            $("#content12").text(d.content12);
+            $("#content13").text(d.content13);
+            $("#content14").text(d.content14);
+        }
+    </script>
+</body>
+
+</html>

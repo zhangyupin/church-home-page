@@ -1,0 +1,42 @@
+{
+    "zh": {
+        "headTitle": "首页",
+        "homeImg": "assets/img/home.png",
+        "contact1": {
+            "churchName": "东京池袋基督教会",
+            "address": "地址：東京都豊島区上池袋2丁目28-13 アグリアス１F",
+            "postalCode": "〒170-0012",
+            "tel": "电话：03-5972-1751",
+            "mobileNumber": "手机：080-3129-6635",
+            "email": "电子邮箱：tcc.ikebukuro@gmail.com"
+        },
+        "contact2": {
+            "churchName": "埼玉使命基督教会",
+            "address": "埼玉県戸田市新曾353-3　2F",
+            "postalCode": "〒335-0021",
+            "tel": "03-5972-1751",
+            "mobileNumber": "080-3129-6635",
+            "email": "tcc.ikebukuro@gmail.com"
+        }
+    },
+    "jp": {
+        "headTitle": "トップページ",
+        "homeImg": "assets/img/home_jp.png",
+        "contact1": {
+            "churchName": "東京池袋基督教会",
+            "address": "東京都豊島区上池袋2丁目28-13 アグリアス１F",
+            "postalCode": "〒170-0012",
+            "tel": "03-5972-1751",
+            "mobileNumber": "080-3129-6635",
+            "email": "tcc.ikebukuro@gmail.com"
+        },
+        "contact2": {
+            "churchName": "埼玉使命基督教会",
+            "address": "埼玉県戸田市新曾353-3　2F",
+            "postalCode": "〒335-0021",
+            "tel": "03-5972-1751",
+            "mobileNumber": "080-3129-6635",
+            "email": "tcc.ikebukuro@gmail.com"
+        }
+    }
+}

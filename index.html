@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title></title>
+    <style>
+        body img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .active {
+            color: rgba(0, 138, 255, .9);
+        }
+
+        ._nav {
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function() {
+            setTimeout(function() {
+                document.querySelector('body').classList.add('loaded');
+            }, 300);
+        });
+    </script>
+    <!-- Quick CSS -->
+    <link rel="stylesheet" href="assets/css/quick-website.css" id="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand">
+                <img alt="Image placeholder" src="assets/img/ticc-title.png" id="navbar-logo">
+            </a>
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mt-4 mt-lg-0 ml-auto">
+                    <li class="nav-item ">
+                        <a id="topPage" class="nav-link _nav"></a>
+                    </li>
+                    <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+                        <a id="ikebukuroParent" class="nav-link _nav"></a>
+                    </li>
+                    <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+                        <a id="saitamaParent" class="nav-link _nav"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="religion" class="nav-link _nav"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="clergyman" class="nav-link _nav"></a>
+                    </li>
+                    <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+                        <a id="languageParent" style="color: #e60000" class="nav-link _nav" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                        <div class="dropdown-menu dropdown-menu-single">
+                            <a id="chinese" class="dropdown-item nav-link _nav"></a>
+                            <a id="japanese" class="dropdown-item nav-link _nav"></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Main content -->
+    <section class="slice py-1">
+        <div class="container">
+            <img id="homeImg" alt="Image placeholder">
+            <div class="mt-5">
+                <div class="card">
+                    <div class="card-body pb-5">
+                        <h5 id="churchName1" class="h4 lh-130 mb-3"></h5>
+                        <p id="postalCode1" class="text-muted mb-0"></p>
+                        <p id="address1" class="text-muted mb-0"></p>
+                        <p id="tel1" class="text-muted mb-0"></p>
+                        <p id="mobileNumber1" class="text-muted mb-0"></p>
+                        <p id="email1" class="text-muted mb-0"></p>
+                        <p style="margin-top: 1rem;">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.5733625284174!2d139.71271707465587!3d35.736709726926165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d61a077b8ad%3A0x44333eb611a58e54!2z44CSMTcwLTAwMTIg5p2x5Lqs6YO96LGK5bO25Yy65LiK5rGg6KKL77yS5LiB55uu77yS77yY4oiS77yR77yTIOOCouOCsOODquOCouOCuQ!5e0!3m2!1sja!2sjp!4v1681647811879!5m2!1sja!2sjp" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5">
+                <div class="card">
+                    <div class="card-body pb-5">
+                        <h5 id="churchName2" class="h4 lh-130 mb-3"></h5>
+                        <p id="postalCode2" class="text-muted mb-0"></p>
+                        <p id="address2" class="text-muted mb-0"></p>
+                        <p id="tel2" class="text-muted mb-0"></p>
+                        <p id="mobileNumber2" class="text-muted mb-0"></p>
+                        <p id="email2" class="text-muted mb-0"></p>
+                        <p style="margin-top: 1rem;">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3235.255964326293!2d139.66711727466026!3d35.818195122439946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018eb163e5f879d%3A0x7d65c2fe76e6f634!2z44CSMzM1LTAwMjEg5Z-8546J55yM5oi455Sw5biC5paw5pu977yT77yV77yT4oiS77yT!5e0!3m2!1sja!2sjp!4v1681647978760!5m2!1sja!2sjp" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="position-relative" id="footer-main">
+        
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/unit.js"></script>
+    <script>
+        $(document).ready(function(){
+            fetch("./assets/data/top-bar.json")
+            .then((response) => response.json())
+            .then((d) => setTopBar(d))
+            .then((d) => {
+                fetch("./assets/data/index.json")
+                .then((response) => response.json())
+                .then((d) => {
+                    if (isChinese) {
+                        setPageItem(d.zh);
+                    } else {
+                        setPageItem(d.jp);
+                    }
+                    $("#topPage").addClass("active").siblings().removeClass("active");
+                })
+            });
+
+            $("#chinese").click(function() {reload("zh");});
+            $("#japanese").click(function() {reload("jp");});
+            $(".nav-link").click(function() {
+                jump(this.id);
+            })
+        });
+
+        function setPageItem(d) {
+            $("head title").text(d.headTitle);
+
+            $("#homeImg").attr("src", d.homeImg);
+
+            $("#churchName1").text(d.contact1.churchName);
+            $("#postalCode1").text(d.contact1.postalCode);
+            $("#address1").text(d.contact1.address);
+            $("#tel1").text(d.contact1.tel);
+            $("#mobileNumber1").text(d.contact1.mobileNumber);
+            $("#email1").text(d.contact1.email);
+
+            $("#churchName2").text(d.contact2.churchName);
+            $("#postalCode2").text(d.contact2.postalCode);
+            $("#address2").text(d.contact2.address);
+            $("#tel2").text(d.contact2.tel);
+            $("#mobileNumber2").text(d.contact2.mobileNumber);
+            $("#email2").text(d.contact2.email);
+        }
+    </script>
+</body>
+
+</html>
